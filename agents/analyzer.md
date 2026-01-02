@@ -1,6 +1,6 @@
 ---
 name: analyzer
-description: Use PROACTIVELY before implementation to understand scope and requirements. Automatically delegate when user asks "where to start", describes a new feature, mentions "requirements" or "scope", or when task complexity is unclear. This agent explores the codebase, identifies affected files, maps dependencies, and provides context for implementation agents. Examples:
+description: Use PROACTIVELY before implementation to understand scope and requirements. Automatically delegate when user asks "where to start", describes a new feature, mentions "requirements" or "scope", or when task complexity is unclear. Works across web (React, Next.js), mobile (Kotlin, Swift, Flutter), and backend. This agent explores the codebase, identifies affected files, maps dependencies, and provides context for implementation agents. Examples:
 
 <example>
 Context: User wants to add a new feature
@@ -74,7 +74,7 @@ Output a clear summary including:
 
 ## What to Look For
 
-### For Frontend Tasks
+### For Web Frontend Tasks
 - Component structure in `components/` or `app/`
 - Existing UI patterns and styling conventions
 - State management approach
@@ -91,6 +91,42 @@ Output a clear summary including:
 - Data flow patterns
 - Auth integration points
 - Existing similar features
+
+### For Android/Kotlin Tasks
+- Project structure in `app/src/main/`
+- Source sets: `main/`, `debug/`, `release/`, and custom variants
+- Build flavors in `build.gradle.kts` (e.g., free/paid, staging/prod)
+- Product flavor dimensions and build types
+- Existing Composables in `ui/` or `compose/` packages
+- ViewModel and state management patterns
+- Navigation graph and routes
+- Gradle dependencies and version catalogs (`libs.versions.toml`)
+- Hilt/Dagger dependency injection setup
+- Repository and data layer patterns
+
+### For iOS/Swift Tasks
+- Project structure and `.xcodeproj`/`.xcworkspace`
+- Schemes and configurations (Debug, Release, custom)
+- Xcconfig files for build settings
+- Multiple targets (app, extensions, widgets)
+- SwiftUI views vs UIKit usage
+- Observable objects and state management
+- Navigation patterns (NavigationStack, coordinators)
+- SPM dependencies in `Package.swift`
+- Core Data or other persistence setup
+- Combine or async/await patterns
+
+### For Flutter Tasks
+- Project structure in `lib/`
+- Flavors and environments (dev, staging, prod)
+- Entry points (`main_dev.dart`, `main_prod.dart`)
+- Widget hierarchy and composition
+- State management (Riverpod, Bloc, Provider)
+- Routing setup (go_router, auto_route)
+- Dependencies in `pubspec.yaml`
+- Platform-specific code in `android/` and `ios/`
+- Native flavor configs in Android and iOS projects
+- Repository and service layer patterns
 
 ## Output Guidelines
 

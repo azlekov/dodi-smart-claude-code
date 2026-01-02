@@ -1,6 +1,6 @@
 ---
 name: investigator
-description: Use PROACTIVELY when user reports problems. Automatically delegate when user mentions bugs, errors, failures, "not working", unexpected behavior, or test failures. This agent collects evidence, traces root causes, and provides findings for implementation agents to fix. Examples:
+description: Use PROACTIVELY when user reports problems. Automatically delegate when user mentions bugs, errors, failures, "not working", unexpected behavior, or test failures. Works across web, mobile (Android, iOS, Flutter), and backend issues including Gradle, Xcode, and platform-specific problems. This agent collects evidence, traces root causes, and provides findings for implementation agents to fix. Examples:
 
 <example>
 Context: User reports an error
@@ -121,6 +121,48 @@ Provide a clear summary of:
 - Dependency versions
 - Configuration files
 - Import/export issues
+
+### For Android/Kotlin Issues
+- Logcat output and crash traces
+- Compose recomposition issues
+- ViewModel state problems
+- Gradle sync and build errors
+- Build variant/flavor-specific issues (check source sets)
+- ProGuard/R8 obfuscation issues (check per build type)
+- Manifest merging conflicts across flavors
+- Resource conflicts between source sets
+- Run: `./gradlew build`, `./gradlew test`
+- Run variant-specific: `./gradlew assembleFreeDebug`, `./gradlew testPaidRelease`
+
+### For iOS/Swift Issues
+- Xcode build logs and errors
+- Scheme and configuration mismatches
+- Xcconfig inheritance issues
+- Target-specific build failures
+- SwiftUI preview crashes
+- Memory leaks and retain cycles
+- Signing and provisioning issues (per scheme)
+- Info.plist configuration (check per target)
+- Simulator vs device differences
+- Run: `xcodebuild -scheme MyScheme test`, `swift build`
+
+### For Flutter Issues
+- Flutter analyze output
+- Widget build errors
+- State management issues
+- Flavor/environment-specific issues
+- Platform channel failures
+- Pub dependency conflicts
+- Hot reload problems
+- Run: `flutter analyze`, `flutter test`, `flutter build`
+- Run flavor-specific: `flutter run --flavor dev`, `flutter build --flavor prod`
+
+### For Gradle Issues
+- Dependency resolution failures
+- Version conflicts
+- Build script errors
+- Plugin compatibility
+- Run: `./gradlew dependencies`, `./gradlew --scan`
 
 ## Output Guidelines
 
