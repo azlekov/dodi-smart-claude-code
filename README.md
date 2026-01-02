@@ -59,8 +59,11 @@ claude --plugin-dir /path/to/claude-code-plugin
 
 | Agent | Description |
 |-------|-------------|
+| `analyzer` | Explores codebase and gathers context before implementation (auto-triggers on new features) |
+| `investigator` | Debugs problems and traces root causes (auto-triggers on errors/bugs) |
 | `frontend-developer` | Senior frontend developer specializing in Next.js, React, Tailwind, and shadcn/ui |
 | `fullstack-developer` | Full-stack development with frontend skills + Supabase + nanoid identifiers |
+| `trigger-dev-expert` | Background jobs and workflows with Trigger.dev |
 
 ### Commands
 
